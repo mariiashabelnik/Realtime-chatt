@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: none;
 }
 
 code {
@@ -30,12 +31,23 @@ ol li::marker {
   content: " # ";
 }
 
-.plus {
+/*.plus {
   border: 0;
   border-radius: 70%;
   padding: 0;
 }
+*/
 
 .content {
   max-height: 100%;
 }
+
+.navigation {
+  padding-left: 0.5em;
+  padding-top: 1em;
+}
+
+/*.button {
+  padding: 1em;
+}
+*/

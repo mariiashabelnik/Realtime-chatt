@@ -41,6 +41,8 @@ function Navigation(props) {
           {item.room}
         </span>
         <Button
+          className="button"
+          size="xs"
           onClick={() => {
             socket.emit("room", { action: "remove", room: item.room });
           }}
@@ -84,16 +86,22 @@ function Navigation(props) {
         </ModalContent>
       </Modal>
 
-      <Accordion defaultIndex={[0]} allowMultiple>
+      <Accordion className="navigation" defaultIndex={[0]} allowMultiple>
         <AccordionItem>
           <h2>
+            MY CHATT
             <AccordionButton>
               <Box flex="1" textAlign="left">
                 Channels
               </Box>
 
               <AccordionIcon />
-              <Button className="plus" onClick={onOpen}>
+              <Button
+                colorScheme="teal"
+                variant="ghost"
+                onClick={onOpen}
+                size="xm"
+              >
                 +
               </Button>
             </AccordionButton>

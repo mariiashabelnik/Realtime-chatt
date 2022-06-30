@@ -53,8 +53,6 @@ function Navigation(props) {
 
   return (
     <div>
-      <Button onClick={onOpen}>+</Button>
-
       <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -93,28 +91,15 @@ function Navigation(props) {
               <Box flex="1" textAlign="left">
                 Channels
               </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            <ul>{roomListUI}</ul>
-          </AccordionPanel>
-        </AccordionItem>
 
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <Box flex="1" textAlign="left">
-                Direct Messeges
-              </Box>
               <AccordionIcon />
+              <Button className="plus" onClick={onOpen}>
+                +
+              </Button>
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4}>
-            <ul>
-              <li>mama</li>
-              <li>papa</li>
-            </ul>
+            <ol>{roomListUI}</ol>
           </AccordionPanel>
         </AccordionItem>
       </Accordion>

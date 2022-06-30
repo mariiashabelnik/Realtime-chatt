@@ -10,7 +10,10 @@ function MessageBoard(props) {
     return (
       <div key={item.id}>
         <div>
-          {item.username} {item.message} {item.created_at}
+          <div className="avatar">
+            {item.username.substr(0, 1).toUpperCase()}
+          </div>{" "}
+          - {item.username} {item.message} {item.created_at}
         </div>
       </div>
     );

@@ -15,3 +15,27 @@ code {
 .joinRoom {
   cursor: pointer;
 }
+
+.avatar {
+  height: 25px;
+  width: 25px;
+  background-color: rgb(235, 124, 255);
+  border-radius: 50%;
+  display: inline-block;
+  position: inherit;
+  text-align: center;
+}
+
+ol li::marker {
+  content: " # ";
+}
+
+.plus {
+  border: 0;
+  border-radius: 70%;
+  padding: 0;
+}
+
+.content {
+  max-height: 100%;
+}

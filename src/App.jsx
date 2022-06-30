@@ -141,6 +141,7 @@ function App() {
         </AlertDialogOverlay>
       </AlertDialog>
       <Grid
+        className="content"
         templateAreas={`
                   "nav main"
                   "nav footer"`}

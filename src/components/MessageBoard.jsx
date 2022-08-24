@@ -1,11 +1,9 @@
-import React from "react";
-
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { activeRoomAtom, historyAtom } from "../store";
 
-function MessageBoard(props) {
-  const [activeRoom, setActiveRoom] = useRecoilState(activeRoomAtom);
-  const [historyList, setHistoryList] = useRecoilState(historyAtom);
+function MessageBoard() {
+  const activeRoom = useRecoilValue(activeRoomAtom);
+  const historyList = useRecoilValue(historyAtom);
   const historyUI = historyList.map((item) => {
     return (
       <div key={item.id}>

@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import {
   Accordion,
@@ -25,8 +24,8 @@ function Navigation(props) {
   const socket = props.socket;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [name, setName] = useState("");
-  const [roomList, setRoomList] = useRecoilState(roomListAtom);
-  const [activeRoom, setActiveRoom] = useRecoilState(activeRoomAtom);
+  const [roomList] = useRecoilState(roomListAtom);
+  const [, setActiveRoom] = useRecoilState(activeRoomAtom);
 
   const roomListUI = roomList.map((item) => {
     return (

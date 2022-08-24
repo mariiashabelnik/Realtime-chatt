@@ -1,23 +1,20 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Box,
   Button,
   Input,
-  IconButton,
   FormLabel,
   HStack,
   InputGroup,
   InputRightElement,
 } from "@chakra-ui/react";
-import { ArrowRightIcon } from "@chakra-ui/icons";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { activeRoomAtom } from "../store";
 
 function MessageInput(props) {
   const socket = props.socket;
   const [message, setMessage] = useState("");
-  const [activeRoom, setActiveRoom] = useRecoilState(activeRoomAtom);
+  const activeRoom = useRecoilValue(activeRoomAtom);
 
   if (activeRoom === "") {
     return <div>Select a room first</div>;

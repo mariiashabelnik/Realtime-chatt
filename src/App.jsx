@@ -30,16 +30,14 @@ const ENDPOINT = import.meta.env.VITE_API;
 
 //let socket;
 
-const hello
-
 function App() {
   // users name & login status
   const [name, setName] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   const [socket, setSocket] = useState(null);
   const [errorMsg, setErrorMsg] = useState("");
-  const [roomList, setRoomList] = useRecoilState(roomListAtom);
-  const [historyList, setHistoryList] = useRecoilState(historyAtom);
+  const [, setRoomList] = useRecoilState(roomListAtom);
+  const [, setHistoryList] = useRecoilState(historyAtom);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
 
@@ -115,9 +113,6 @@ function App() {
   }
 
   // method to send message
-  const sendMessage = (room, msg) => {
-    socket.emit("message", { msg: msg, room: room });
-  };
 
   return (
     <>

@@ -30,6 +30,8 @@ const ENDPOINT = import.meta.env.VITE_API;
 
 //let socket;
 
+const hello
+
 function App() {
   // users name & login status
   const [name, setName] = useState("");

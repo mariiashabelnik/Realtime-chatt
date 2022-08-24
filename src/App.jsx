@@ -26,7 +26,7 @@ import MessageInput from "./components/MessageInput";
 import Navigation from "./components/Navigation";
 import MessageBoard from "./components/MessageBoard";
 
-const ENDPOINT = "http://localhost:4000";
+const ENDPOINT = import.meta.env.VITE_API;
 
 //let socket;
 

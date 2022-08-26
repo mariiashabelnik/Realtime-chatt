@@ -1,11 +1,5 @@
 import { useState } from "react";
 import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Box,
   Modal,
   ModalOverlay,
   ModalHeader,

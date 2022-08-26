@@ -4,7 +4,7 @@ import App from "./App";
 import "./index.css";
 import { RecoilRoot } from "recoil";
 import { ChakraProvider } from "@chakra-ui/react";
-import { ColorModeScript } from "@chakra-ui/react";
+
 import theme from "./theme";
 
 // 2. Extend the theme to include custom colors, fonts, etc

@@ -140,22 +140,23 @@ function App() {
       <Grid
         className="content"
         templateAreas={`
-                  "nav main"
-                  "nav footer"`}
-        gridTemplateRows={" 1fr 100px"}
-        gridTemplateColumns={"200px 1fr"}
+                  "nav"
+                  "main"
+                  "footer"`}
+        gridTemplateRows={"2em  1fr 100px"}
+        gridTemplateColumns={"1fr"}
         h="100vh"
         gap="1"
-        color="blackAlpha.700"
+        color="whiteAlpha.900"
         fontWeight="bold"
       >
-        <GridItem bg="pink.300" area={"nav"}>
+        <GridItem bg="gray.800" area={"nav"}>
           <Navigation socket={socket} />
         </GridItem>
-        <GridItem bg="green.300" area={"main"}>
+        <GridItem bg="gray.800" area={"main"}>
           <MessageBoard></MessageBoard>
         </GridItem>
-        <GridItem bg="blue.300" area={"footer"}>
+        <GridItem bg="gray.800" area={"footer"}>
           <MessageInput socket={socket} />
         </GridItem>
       </Grid>

@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: none;
+  background-color: black;
 }
 
 code {
@@ -51,3 +52,7 @@ ol li::marker {
   padding: 1em;
 }
 */
+
+.rooms li {
+  display: inline;
+}

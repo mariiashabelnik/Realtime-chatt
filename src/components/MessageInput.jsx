@@ -8,6 +8,7 @@ import {
   InputGroup,
   InputRightElement,
 } from "@chakra-ui/react";
+import { ArrowRightIcon } from "@chakra-ui/icons";
 import { useRecoilValue } from "recoil";
 import { activeRoomAtom } from "../store";
 
@@ -39,8 +40,13 @@ function MessageInput(props) {
               }}
               placeholder="Please,type your message here"
             />
-            <InputRightElement width="4.5rem">
-              <Button h="1.75rem" size="sm" type="submit">
+            <InputRightElement width="5.5rem">
+              <Button
+                size="sm"
+                type="submit"
+                colorScheme="messenger"
+                rightIcon={<ArrowRightIcon />}
+              >
                 Send
               </Button>
             </InputRightElement>

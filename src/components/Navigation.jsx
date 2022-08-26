@@ -15,6 +15,7 @@ import {
   ModalFooter,
   ModalContent,
   Button,
+  ButtonGroup,
   Input,
 } from "@chakra-ui/react";
 import { useRecoilState } from "recoil";
@@ -30,24 +31,29 @@ function Navigation(props) {
   const roomListUI = roomList.map((item) => {
     return (
       <li key={item.id}>
-        <span
-          className="joinRoom"
-          onClick={() => {
-            socket.emit("room", { action: "join", room: item.room });
-            setActiveRoom(item.room);
-          }}
-        >
-          {item.room}
-        </span>
-        <Button
-          className="button"
-          size="xs"
-          onClick={() => {
-            socket.emit("room", { action: "remove", room: item.room });
-          }}
-        >
-          -
-        </Button>
+        <ButtonGroup size="sm" isAttached variant="outline">
+          <Button
+            className="button"
+            colorScheme="teal"
+            size="xs"
+            onClick={() => {
+              socket.emit("room", { action: "join", room: item.room });
+              setActiveRoom(item.room);
+            }}
+          >
+            {item.room}
+          </Button>
+          <Button
+            className="button"
+            colorScheme="teal"
+            size="xs"
+            onClick={() => {
+              socket.emit("room", { action: "remove", room: item.room });
+            }}
+          >
+            -
+          </Button>
+        </ButtonGroup>
       </li>
     );
   });
@@ -84,32 +90,19 @@ function Navigation(props) {
           </ModalFooter>
         </ModalContent>
       </Modal>
-
-      <Accordion className="navigation" defaultIndex={[0]} allowMultiple>
-        <AccordionItem>
-          <h2>
-            MY CHATT
-            <AccordionButton>
-              <Box flex="1" textAlign="left">
-                Channels
-              </Box>
-
-              <AccordionIcon />
-              <Button
-                colorScheme="teal"
-                variant="ghost"
-                onClick={onOpen}
-                size="xm"
-              >
-                +
-              </Button>
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            <ol>{roomListUI}</ol>
-          </AccordionPanel>
-        </AccordionItem>
-      </Accordion>
+      <ol className="rooms">
+        {roomListUI}
+        <li>
+          <Button
+            colorScheme="teal"
+            variant="outline"
+            onClick={onOpen}
+            size="xs"
+          >
+            +
+          </Button>
+        </li>
+      </ol>{" "}
     </div>
   );
 }

@@ -26,12 +26,15 @@ function Navigation(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [name, setName] = useState("");
   const [roomList] = useRecoilState(roomListAtom);
-  const [, setActiveRoom] = useRecoilState(activeRoomAtom);
-
+  const [activeRoom, setActiveRoom] = useRecoilState(activeRoomAtom);
   const roomListUI = roomList.map((item) => {
+    let btnStyle = "outline";
+    if (activeRoom === item.room) {
+      btnStyle = "solid";
+    }
     return (
       <li key={item.id}>
-        <ButtonGroup size="sm" isAttached variant="outline">
+        <ButtonGroup size="sm" isAttached variant={btnStyle}>
           <Button
             className="button"
             colorScheme="teal"
@@ -51,9 +54,10 @@ function Navigation(props) {
               socket.emit("room", { action: "remove", room: item.room });
             }}
           >
-            -
+            x
           </Button>
         </ButtonGroup>
+        |
       </li>
     );
   });

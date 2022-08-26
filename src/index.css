@@ -56,3 +56,27 @@ ol li::marker {
 .rooms li {
   display: inline;
 }
+
+.one-message {
+  background-color: #4a5568;
+  width: 30%;
+  border-radius: 1em 1em 1em 0;
+  margin: 1em;
+  padding-bottom: 0.5em;
+}
+.my-message {
+  background-color: #285e61;
+  border-radius: 1em 1em 0 1em;
+  margin-left: auto;
+}
+
+.sender {
+  margin-left: 1em;
+}
+
+.message {
+  background-color: #2e3849;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  margin: 1em;
+}

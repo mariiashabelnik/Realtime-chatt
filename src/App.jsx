@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { roomListAtom, historyAtom } from "./store";
+import { roomListAtom, historyAtom, myname } from "./store";
 import React from "react";
 
 import "./App.css";
@@ -32,7 +32,7 @@ const ENDPOINT = import.meta.env.VITE_API;
 
 function App() {
   // users name & login status
-  const [name, setName] = useState("");
+  const [name, setName] = useRecoilState(myname);
   const [loggedIn, setLoggedIn] = useState(false);
   const [socket, setSocket] = useState(null);
   const [errorMsg, setErrorMsg] = useState("");

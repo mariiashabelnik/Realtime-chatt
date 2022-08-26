@@ -14,3 +14,8 @@ export const historyAtom = atom({
   key: "historyState",
   default: [],
 });
+
+export const myname = atom({
+  key: "myname",
+  default: "",
+});

@@ -29,7 +29,7 @@ function MessageInput(props) {
         setMessage("");
       }}
     >
-      <Box borderWidth="1px" p={2} m={1} overflow="hidden">
+      <Box borderWidth="0px" p={2} m={1} overflow="hidden">
         <FormLabel htmlFor="name"></FormLabel>
         <HStack>
           <InputGroup size="md">
@@ -40,17 +40,15 @@ function MessageInput(props) {
               }}
               placeholder="Please,type your message here"
             />
-            <InputRightElement width="5.5rem">
-              <Button
-                size="sm"
-                type="submit"
-                colorScheme="messenger"
-                rightIcon={<ArrowRightIcon />}
-              >
-                Send
-              </Button>
-            </InputRightElement>
           </InputGroup>
+          <Button
+            size="sm"
+            type="submit"
+            colorScheme="messenger"
+            rightIcon={<ArrowRightIcon />}
+          >
+            Send
+          </Button>
         </HStack>
       </Box>
     </form>

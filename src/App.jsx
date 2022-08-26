@@ -146,7 +146,7 @@ function App() {
         gridTemplateRows={"2em  1fr 100px"}
         gridTemplateColumns={"1fr"}
         h="100vh"
-        gap="1"
+        gap="0"
         color="whiteAlpha.900"
         fontWeight="bold"
       >

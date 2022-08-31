@@ -36,7 +36,7 @@ function MessageBoard() {
   });
 
   return (
-    <div>
+    <div className="container">
       {activeRoom}
       <div className="all-messages">{historyUI}</div>
     </div>

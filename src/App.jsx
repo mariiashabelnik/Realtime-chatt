@@ -143,7 +143,7 @@ function App() {
                   "nav"
                   "main"
                   "footer"`}
-        gridTemplateRows={"2em  1fr 100px"}
+        gridTemplateRows={"4em  1fr 5em"}
         gridTemplateColumns={"1fr"}
         h="100vh"
         gap="0"

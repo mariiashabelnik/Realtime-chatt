@@ -9,6 +9,10 @@ body {
   background-color: black;
 }
 
+.start-message {
+  margin: 0 auto;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -43,6 +47,11 @@ ol li::marker {
   max-height: 100%;
 }
 
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .navigation {
   padding-left: 0.5em;
   padding-top: 1em;
@@ -53,13 +62,33 @@ ol li::marker {
 }
 */
 
+.nav-tab {
+  background-color: rgb(221, 235, 178);
+  display: inline-block;
+  padding: 0.5em;
+  border-radius: 1em 1em 0 0;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+  animation-duration: 5s;
+}
+
+.active-room {
+  background-color: rgb(255, 94, 0);
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.rooms {
+  padding-left: 1em;
+  border-bottom: 1px solid #000000;
+  overflow: hidden;
+}
 .rooms li {
   display: inline;
 }
 
 .one-message {
-  background-color: #4a5568;
-  width: 30%;
+  background-color: #c4cbae;
+  width: 40%;
   border-radius: 1em 1em 1em 0;
   margin: 1em;
   padding-bottom: 0.5em;

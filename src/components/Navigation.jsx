@@ -22,13 +22,44 @@ function Navigation(props) {
   const [roomList] = useRecoilState(roomListAtom);
   const [activeRoom, setActiveRoom] = useRecoilState(activeRoomAtom);
   const roomListUI = roomList.map((item) => {
-    let btnStyle = "outline";
+    let active = ["nav-tab"];
     if (activeRoom === item.room) {
-      btnStyle = "solid";
+      active.push("active-room");
     }
     return (
       <li key={item.id}>
-        <ButtonGroup size="sm" isAttached variant={btnStyle}>
+        <div className={active.join(" ")}>
+          <Button
+            className="button"
+            colorScheme="teal"
+            variant="link"
+            size="xs"
+            onClick={() => {
+              socket.emit("room", { action: "join", room: item.room });
+              setActiveRoom(item.room);
+            }}
+          >
+            {item.room}
+          </Button>
+
+          <Button
+            className="button"
+            colorScheme="teal"
+            size="xs"
+            variant="link"
+            onClick={() => {
+              socket.emit("room", { action: "remove", room: item.room });
+            }}
+          >
+            x
+          </Button>
+        </div>
+      </li>
+    );
+  });
+
+  /*
+<ButtonGroup size="sm" isAttached variant={btnStyle}>
           <Button
             className="button"
             colorScheme="teal"
@@ -51,13 +82,10 @@ function Navigation(props) {
             x
           </Button>
         </ButtonGroup>
-        |
-      </li>
-    );
-  });
+*/
 
   return (
-    <div>
+    <div className="container">
       <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -67,7 +95,7 @@ function Navigation(props) {
             <Input
               value={name}
               onChange={(e) => {
-                setName(e.target.value);
+                setName(e.target.value.toUpperCase());
               }}
               size="md"
               placeholder="Channel name"

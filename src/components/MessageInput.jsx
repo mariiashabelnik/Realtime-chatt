@@ -18,40 +18,42 @@ function MessageInput(props) {
   const activeRoom = useRecoilValue(activeRoomAtom);
 
   if (activeRoom === "") {
-    return <div>Select a room first</div>;
+    return <div className="start-message">Select or create a room first </div>;
   }
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        socket.emit("message", { msg: message, room: activeRoom });
-        setMessage("");
-      }}
-    >
-      <Box borderWidth="0px" p={2} m={1} overflow="hidden">
-        <FormLabel htmlFor="name"></FormLabel>
-        <HStack>
-          <InputGroup size="md">
-            <Input
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-              placeholder="Please,type your message here"
-            />
-          </InputGroup>
-          <Button
-            size="sm"
-            type="submit"
-            colorScheme="messenger"
-            rightIcon={<ArrowRightIcon />}
-          >
-            Send
-          </Button>
-        </HStack>
-      </Box>
-    </form>
+    <div className="container">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          socket.emit("message", { msg: message, room: activeRoom });
+          setMessage("");
+        }}
+      >
+        <Box borderWidth="0px" p={2} m={1} overflow="hidden">
+          <FormLabel htmlFor="name"></FormLabel>
+          <HStack>
+            <InputGroup size="md">
+              <Input
+                value={message}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                }}
+                placeholder="Please,type your message here"
+              />
+            </InputGroup>
+            <Button
+              size="sm"
+              type="submit"
+              colorScheme="messenger"
+              rightIcon={<ArrowRightIcon />}
+            >
+              Send
+            </Button>
+          </HStack>
+        </Box>
+      </form>
+    </div>
   );
 }
 
